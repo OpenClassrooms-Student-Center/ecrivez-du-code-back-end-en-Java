@@ -1,4 +1,4 @@
-package com.hamac.controller;
+package com.hamac.web;
 
 import java.time.LocalDate;
 import org.springframework.stereotype.Controller;

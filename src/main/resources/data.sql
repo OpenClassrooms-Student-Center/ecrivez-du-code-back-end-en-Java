@@ -11,6 +11,8 @@ INSERT INTO employee (first_name, last_name, contract_type, hire_date, days_take
 VALUES ('Leïla', 'Haddad', 'CDD', DATEADD('DAY', -5, DATEADD('MONTH', -7, CURRENT_DATE)), 10);
 INSERT INTO employee (first_name, last_name, contract_type, hire_date, days_taken)
 VALUES ('Sofia', 'Rossi', 'CDD', DATEADD('DAY', -2, DATEADD('MONTH', -11, CURRENT_DATE)), 4);
+INSERT INTO employee (first_name, last_name, contract_type, hire_date, days_taken)
+VALUES ('Zoé', 'Mendes', 'Stage', DATEADD('DAY', 7, CURRENT_DATE), 0);
 
 INSERT INTO leave_request (employee_id, start_date, end_date, working_days, status)
 VALUES (1, DATEADD('DAY', 14, CURRENT_DATE), DATEADD('DAY', 18, CURRENT_DATE), 5, 'Pending');

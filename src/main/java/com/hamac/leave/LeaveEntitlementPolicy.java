@@ -1,9 +1,10 @@
-package com.hamac.service;
+package com.hamac.leave;
 
-import com.hamac.model.Employee;
+import com.hamac.employee.ContractType;
+import com.hamac.employee.Employee;
 import java.time.LocalDate;
 
-public interface LeaveEntitlementPolicy {
+interface LeaveEntitlementPolicy {
 
     boolean supports(ContractType type);
 

@@ -1,9 +1,9 @@
-package com.hamac.service;
+package com.hamac.leave;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.within;
 
-import com.hamac.model.Employee;
+import com.hamac.employee.Employee;
 import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ class FixedTermContractPolicyTests {
 
     @Test
     void countsOnlyFullMonths() {
-        var policy = new FixedTermContractPolicy();
+        var policy = new FixedTermContractPolicy(new LeaveProperties(2.08));
         var employee = new Employee();
         employee.setHireDate(LocalDate.of(2026, 3, 15));
 

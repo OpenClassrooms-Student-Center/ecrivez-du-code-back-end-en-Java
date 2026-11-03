@@ -1,4 +1,4 @@
-package com.hamac.model;
+package com.hamac.employee;
 
 import java.util.Optional;
 import org.springframework.data.repository.Repository;

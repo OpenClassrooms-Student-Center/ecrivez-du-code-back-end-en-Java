@@ -1,6 +1,6 @@
-package com.hamac.service;
+package com.hamac.leave;
 
-import com.hamac.model.Employee;
+import com.hamac.employee.Employee;
 
 public interface LeaveNotifier {
 

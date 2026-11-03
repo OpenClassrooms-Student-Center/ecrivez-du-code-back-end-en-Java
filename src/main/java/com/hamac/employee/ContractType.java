@@ -1,11 +1,12 @@
-package com.hamac.service;
+package com.hamac.employee;
 
 import java.util.Arrays;
 
 public enum ContractType {
     PERMANENT("CDI"),
     FIXED_TERM("CDD"),
-    APPRENTICESHIP("Alternance");
+    APPRENTICESHIP("Alternance"),
+    INTERNSHIP("Stage");
 
     private final String code;
 

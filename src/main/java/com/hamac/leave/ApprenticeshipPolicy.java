@@ -1,9 +1,12 @@
-package com.hamac.service;
+package com.hamac.leave;
 
-import com.hamac.model.Employee;
+import com.hamac.employee.ContractType;
+import com.hamac.employee.Employee;
 import java.time.LocalDate;
+import org.springframework.stereotype.Component;
 
-public final class ApprenticeshipPolicy implements LeaveEntitlementPolicy {
+@Component
+final class ApprenticeshipPolicy implements LeaveEntitlementPolicy {
 
     private static final double ANNUAL_DAYS = 25;
     private static final double EXAM_PREPARATION_DAYS = 5;

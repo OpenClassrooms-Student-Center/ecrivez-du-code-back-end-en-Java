@@ -1,4 +1,4 @@
-import * as leaveApi from './leave-api-mock.js';
+import * as leaveApi from './leave-api.js';
 import { LeaveApiError } from './leave-api-error.js';
 
 const texts = {

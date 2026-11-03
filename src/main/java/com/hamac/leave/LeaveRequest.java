@@ -1,4 +1,4 @@
-package com.hamac.model;
+package com.hamac.leave;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
-public class LeaveRequest {
+class LeaveRequest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

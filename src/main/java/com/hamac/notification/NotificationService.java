@@ -1,10 +1,13 @@
-package com.hamac.service;
+package com.hamac.notification;
 
-import com.hamac.model.Employee;
+import com.hamac.employee.Employee;
+import com.hamac.leave.LeaveNotifier;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Component;
 
-public class NotificationService implements LeaveNotifier {
+@Component
+class NotificationService implements LeaveNotifier {
 
     private final List<String> failedNotifications = new ArrayList<>();
 

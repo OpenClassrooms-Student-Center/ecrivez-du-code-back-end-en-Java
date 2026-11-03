@@ -1,4 +1,4 @@
-package com.hamac.model;
+package com.hamac.employee;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
