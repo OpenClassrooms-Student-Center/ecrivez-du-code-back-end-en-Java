@@ -4,10 +4,11 @@ import com.hamac.model.Employee;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NotificationService {
+public class NotificationService implements LeaveNotifier {
 
     private final List<String> failedNotifications = new ArrayList<>();
 
+    @Override
     public void notify(Employee employee, String message) {
         // Simulation : en production, ce service enverrait un e-mail.
         System.out.println("[notification] " + employee.getFirstName() + " " + employee.getLastName()

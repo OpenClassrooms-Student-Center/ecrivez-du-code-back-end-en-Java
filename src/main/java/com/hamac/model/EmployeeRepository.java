@@ -1,6 +1,11 @@
 package com.hamac.model;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+import org.springframework.data.repository.Repository;
 
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+public interface EmployeeRepository extends Repository<Employee, Long> {
+
+    Optional<Employee> findById(Long id);
+
+    Employee save(Employee employee);
 }
