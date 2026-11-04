@@ -43,12 +43,12 @@ public class LeaveController {
         }
 
         if (d - e.getDaysTaken() < req.getWorkingDays()) {
-            req.setStatus("Refused");
+            req.setStatus("REFUSED");
             leaveRequestRepository.save(req);
             return "Refused: insufficient balance";
         }
 
-        req.setStatus("Approved");
+        req.setStatus("APPROVED");
         e.setDaysTaken(e.getDaysTaken() + req.getWorkingDays());
         leaveRequestRepository.save(req);
         employeeRepository.save(e);

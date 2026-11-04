@@ -8,7 +8,7 @@ const texts = {
     employee: 'Salarié', start: 'Début', end: 'Fin', days: 'Jours', status: 'Statut', actions: 'Actions',
     newRequest: 'Nouvelle demande', submit: 'Déposer', approve: 'Approuver', refuse: 'Refuser',
     balance: 'Solde : {0} jours', unexpected: 'Une erreur inattendue est survenue.',
-    Pending: 'En attente', Approved: 'Approuvée', Refused: 'Refusée',
+    PENDING: 'En attente', APPROVED: 'Approuvée', REFUSED: 'Refusée',
   },
   en: {
     language: 'Language', balanceTitle: 'Leave balance', employeeNumber: 'Employee number',
@@ -16,7 +16,7 @@ const texts = {
     employee: 'Employee', start: 'Start', end: 'End', days: 'Days', status: 'Status', actions: 'Actions',
     newRequest: 'New request', submit: 'Submit', approve: 'Approve', refuse: 'Refuse',
     balance: 'Balance: {0} days', unexpected: 'An unexpected error occurred.',
-    Pending: 'Pending', Approved: 'Approved', Refused: 'Refused',
+    PENDING: 'Pending', APPROVED: 'Approved', REFUSED: 'Refused',
   },
 };
 
@@ -103,7 +103,7 @@ async function loadRequests() {
         row.append(cell);
       }
       const actions = document.createElement('td');
-      if (request.status === 'Pending') {
+      if (request.status === 'PENDING') {
         actions.append(
           actionButton(t('approve'), () => leaveApi.approve(request.id)),
           actionButton(t('refuse'), () => leaveApi.refuse(request.id)),
