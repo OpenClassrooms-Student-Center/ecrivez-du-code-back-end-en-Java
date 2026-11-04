@@ -39,12 +39,12 @@ public final class LeaveService {
         var employee = employeeRepository.findById(request.getEmployeeId()).orElseThrow();
 
         if (computeBalance(employee) < request.getWorkingDays()) {
-            request.setStatus("Refused");
+            request.setStatus("REFUSED");
             leaveRequestRepository.save(request);
             return ApprovalResult.INSUFFICIENT_BALANCE;
         }
 
-        request.setStatus("Approved");
+        request.setStatus("APPROVED");
         employee.setDaysTaken(employee.getDaysTaken() + request.getWorkingDays());
         leaveRequestRepository.save(request);
         employeeRepository.save(employee);

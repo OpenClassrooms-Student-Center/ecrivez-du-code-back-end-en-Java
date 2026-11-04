@@ -2,10 +2,10 @@
 import { LeaveApiError } from './leave-api-error.js';
 
 const requests = [
-  { id: 1, employeeId: 1, startDate: '2026-07-06', endDate: '2026-07-10', days: 5, status: 'Pending' },
-  { id: 2, employeeId: 2, startDate: '2026-05-18', endDate: '2026-05-20', days: 3, status: 'Approved' },
-  { id: 3, employeeId: 3, startDate: '2026-08-03', endDate: '2026-08-07', days: 5, status: 'Refused' },
-  { id: 4, employeeId: 1, startDate: '2026-09-14', endDate: '2026-09-15', days: 2, status: 'Pending' },
+  { id: 1, employeeId: 1, startDate: '2026-07-06', endDate: '2026-07-10', days: 5, status: 'PENDING' },
+  { id: 2, employeeId: 2, startDate: '2026-05-18', endDate: '2026-05-20', days: 3, status: 'APPROVED' },
+  { id: 3, employeeId: 3, startDate: '2026-08-03', endDate: '2026-08-07', days: 5, status: 'REFUSED' },
+  { id: 4, employeeId: 1, startDate: '2026-09-14', endDate: '2026-09-15', days: 2, status: 'PENDING' },
 ];
 
 export async function getBalance(employeeId) {
@@ -36,18 +36,18 @@ export async function createRequest(newRequest) {
     startDate,
     endDate,
     days,
-    status: 'Pending',
+    status: 'PENDING',
   };
   requests.push(created);
   return { ...created };
 }
 
 export async function approve(requestId) {
-  return decide(requestId, 'Approved');
+  return decide(requestId, 'APPROVED');
 }
 
 export async function refuse(requestId) {
-  return decide(requestId, 'Refused');
+  return decide(requestId, 'REFUSED');
 }
 
 function decide(requestId, status) {
@@ -55,7 +55,7 @@ function decide(requestId, status) {
   if (!request) {
     throw new LeaveApiError('Demande introuvable.');
   }
-  if (request.status !== 'Pending') {
+  if (request.status !== 'PENDING') {
     throw new LeaveApiError('Cette demande a déjà été traitée.');
   }
   request.status = status;

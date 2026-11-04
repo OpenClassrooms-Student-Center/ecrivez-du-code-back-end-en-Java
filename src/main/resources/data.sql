@@ -13,18 +13,18 @@ INSERT INTO employee (first_name, last_name, contract_type, hire_date, days_take
 VALUES ('Sofia', 'Rossi', 'CDD', DATEADD('DAY', -2, DATEADD('MONTH', -11, CURRENT_DATE)), 4);
 
 INSERT INTO leave_request (employee_id, start_date, end_date, working_days, status)
-VALUES (1, DATEADD('DAY', 14, CURRENT_DATE), DATEADD('DAY', 18, CURRENT_DATE), 5, 'Pending');
+VALUES (1, DATEADD('DAY', 14, CURRENT_DATE), DATEADD('DAY', 18, CURRENT_DATE), 5, 'PENDING');
 INSERT INTO leave_request (employee_id, start_date, end_date, working_days, status)
-VALUES (3, DATEADD('DAY', -40, CURRENT_DATE), DATEADD('DAY', -38, CURRENT_DATE), 3, 'Approved');
+VALUES (3, DATEADD('DAY', -40, CURRENT_DATE), DATEADD('DAY', -38, CURRENT_DATE), 3, 'APPROVED');
 INSERT INTO leave_request (employee_id, start_date, end_date, working_days, status)
-VALUES (2, DATEADD('DAY', 30, CURRENT_DATE), DATEADD('DAY', 31, CURRENT_DATE), 2, 'Pending');
+VALUES (2, DATEADD('DAY', 30, CURRENT_DATE), DATEADD('DAY', 31, CURRENT_DATE), 2, 'PENDING');
 INSERT INTO leave_request (employee_id, start_date, end_date, working_days, status)
-VALUES (5, DATEADD('DAY', -20, CURRENT_DATE), DATEADD('DAY', -17, CURRENT_DATE), 4, 'Approved');
+VALUES (5, DATEADD('DAY', -20, CURRENT_DATE), DATEADD('DAY', -17, CURRENT_DATE), 4, 'APPROVED');
 INSERT INTO leave_request (employee_id, start_date, end_date, working_days, status)
-VALUES (3, DATEADD('DAY', 21, CURRENT_DATE), DATEADD('DAY', 25, CURRENT_DATE), 5, 'Refused');
+VALUES (3, DATEADD('DAY', 21, CURRENT_DATE), DATEADD('DAY', 25, CURRENT_DATE), 5, 'REFUSED');
 INSERT INTO leave_request (employee_id, start_date, end_date, working_days, status)
-VALUES (2, DATEADD('DAY', -60, CURRENT_DATE), DATEADD('DAY', -56, CURRENT_DATE), 5, 'Approved');
+VALUES (2, DATEADD('DAY', -60, CURRENT_DATE), DATEADD('DAY', -56, CURRENT_DATE), 5, 'APPROVED');
 INSERT INTO leave_request (employee_id, start_date, end_date, working_days, status)
-VALUES (4, DATEADD('DAY', 35, CURRENT_DATE), DATEADD('DAY', 39, CURRENT_DATE), 5, 'Pending');
+VALUES (4, DATEADD('DAY', 35, CURRENT_DATE), DATEADD('DAY', 39, CURRENT_DATE), 5, 'PENDING');
 INSERT INTO leave_request (employee_id, start_date, end_date, working_days, status)
-VALUES (5, DATEADD('DAY', 45, CURRENT_DATE), DATEADD('DAY', 46, CURRENT_DATE), 2, 'Pending');
+VALUES (5, DATEADD('DAY', 45, CURRENT_DATE), DATEADD('DAY', 46, CURRENT_DATE), 2, 'PENDING');
