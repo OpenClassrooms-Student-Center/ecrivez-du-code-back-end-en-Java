@@ -1,6 +1,8 @@
 package com.hamac.leave;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,7 +19,8 @@ class LeaveRequest {
     private LocalDate startDate;
     private LocalDate endDate;
     private int workingDays;
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private LeaveStatus status;
 
     public Long getId() {
         return id;
@@ -55,11 +58,11 @@ class LeaveRequest {
         this.workingDays = workingDays;
     }
 
-    public String getStatus() {
+    public LeaveStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(LeaveStatus status) {
         this.status = status;
     }
 }

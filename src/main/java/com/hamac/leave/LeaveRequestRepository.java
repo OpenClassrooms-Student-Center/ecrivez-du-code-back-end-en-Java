@@ -11,7 +11,7 @@ interface LeaveRequestRepository extends Repository<LeaveRequest, Long> {
 
     List<LeaveRequest> findAll(Sort sort);
 
-    List<LeaveRequest> findByStatus(String status, Sort sort);
+    List<LeaveRequest> findByStatus(LeaveStatus status, Sort sort);
 
     LeaveRequest save(LeaveRequest request);
 }

@@ -33,7 +33,7 @@ class LeaveService {
         return employeeRepository.findById(employeeId).map(this::computeBalance);
     }
 
-    public List<LeaveRequest> getRequests(String status) {
+    public List<LeaveRequest> getRequests(LeaveStatus status) {
         var byStartDate = Sort.by("startDate");
         return status == null
                 ? leaveRequestRepository.findAll(byStartDate)
@@ -54,7 +54,7 @@ class LeaveService {
         request.setStartDate(startDate);
         request.setEndDate(endDate);
         request.setWorkingDays(countWorkingDays(startDate, endDate));
-        request.setStatus(LeaveStatuses.PENDING);
+        request.setStatus(LeaveStatus.PENDING);
         return Optional.of(leaveRequestRepository.save(request));
     }
 
@@ -65,18 +65,18 @@ class LeaveService {
             return ApprovalResult.NOT_FOUND;
         }
         var request = found.get();
-        if (!LeaveStatuses.PENDING.equals(request.getStatus())) {
+        if (request.getStatus() != LeaveStatus.PENDING) {
             return ApprovalResult.NOT_PENDING;
         }
         var employee = employeeRepository.findById(request.getEmployeeId()).orElseThrow();
 
         if (computeBalance(employee) < request.getWorkingDays()) {
-            request.setStatus(LeaveStatuses.REFUSED);
+            request.setStatus(LeaveStatus.REFUSED);
             leaveRequestRepository.save(request);
             return ApprovalResult.INSUFFICIENT_BALANCE;
         }
 
-        request.setStatus(LeaveStatuses.APPROVED);
+        request.setStatus(LeaveStatus.APPROVED);
         employee.setDaysTaken(employee.getDaysTaken() + request.getWorkingDays());
         leaveRequestRepository.save(request);
         employeeRepository.save(employee);
@@ -92,10 +92,10 @@ class LeaveService {
             return RefusalResult.NOT_FOUND;
         }
         var request = found.get();
-        if (!LeaveStatuses.PENDING.equals(request.getStatus())) {
+        if (request.getStatus() != LeaveStatus.PENDING) {
             return RefusalResult.NOT_PENDING;
         }
-        request.setStatus(LeaveStatuses.REFUSED);
+        request.setStatus(LeaveStatus.REFUSED);
         leaveRequestRepository.save(request);
         return RefusalResult.REFUSED;
     }

@@ -25,7 +25,7 @@ class LeaveRequestsController {
     }
 
     @GetMapping
-    List<LeaveRequestDto> getAll(@RequestParam(required = false) String status) {
+    List<LeaveRequestDto> getAll(@RequestParam(required = false) LeaveStatus status) {
         return leaveService.getRequests(status).stream()
                 .map(LeaveRequestDto::from)
                 .toList();

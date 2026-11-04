@@ -8,7 +8,7 @@ record LeaveRequestDto(
         LocalDate startDate,
         LocalDate endDate,
         int workingDays,
-        String status) {
+        LeaveStatus status) {
 
     static LeaveRequestDto from(LeaveRequest request) {
         return new LeaveRequestDto(
